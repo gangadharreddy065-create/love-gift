@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Love ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .gift-container {
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .gift-box {
+      width: 150px;
+      height: 120px;
+      background: #ff4d6d;
+      position: relative;
+      border-radius: 10px;
+      margin: auto;
+      transition: transform 0.4s ease;
+    }
+
+    .gift-box::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 120px;
+      background: #fff;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .gift-box::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 20px;
+      background: #fff;
+      top: 45%;
+      left: 0;
+    }
+
+    .gift-lid {
+      width: 160px;
+      height: 40px;
+      background: #ff758f;
+      position: absolute;
+      top: -40px;
+      left: -5px;
+      border-radius: 10px;
+      transition: transform 0.5s ease;
+      transform-origin: bottom;
+    }
+
+    .message {
+      color: white;
+      font-size: 32px;
+      margin-top: 40px;
+      display: none;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .open .gift-lid {
+      transform: rotate(-120deg);
+    }
+
+    .open .gift-box {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gift-container" onclick="openGift()">
+    <div class="gift-box" id="box">
+      <div class="gift-lid" id="lid"></div>
+    </div>
+    <div class="message" id="message">
+      I love uh baby ❤️
+    </div>
+  </div>
+
+  <script>
+    function openGift() {
+      document.getElementById("box").classList.add("open");
+      document.getElementById("message").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
